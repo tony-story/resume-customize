@@ -97,15 +97,18 @@ export const Page: React.FC = () => {
       fetchResume(lang, branch, user)
         .then(data => store(data))
         .catch(() => {
+          console.log('output modal....')
           Modal.info({
-            title: <FormattedMessage id="获取简历信息失败" />,
+            // title: <FormattedMessage id="获取简历信息失败" />,
+            title: intl.formatMessage({ id: '获取简历信息失败' }),
             content: (
               <div>
                 请检查用户名 {user} 是否正确或者简历信息是否在
                 <a href={link} target="_blank">{`${link}/resume.json`}</a>下
               </div>
             ),
-            okText: <FormattedMessage id="进入在线编辑" />, // intl.formatMessage({ id: '进入在线编辑' }),
+            // okText: <FormattedMessage id="进入在线编辑" />, // intl.formatMessage({ id: '进入在线编辑' }),
+            okText: intl.formatMessage({ id: '进入在线编辑' }),
             onOk: () => {
               changeMode('edit');
             },
@@ -117,6 +120,7 @@ export const Page: React.FC = () => {
           store(JSON.parse(data));
         });
       } else {
+        console.log('user log:'+ user)
         getConfig(lang, branch, user).then(data => {
           store(data);
         });

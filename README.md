@@ -47,3 +47,14 @@ npm start
 
 - [resumemaker](https://www.resumemaker.online/es.php)
 - [Geek Resume - Pure Markdown, an online resume editor for developer.](https://www.jijian.press/)
+
+
+## help
+这个 jq 命令的作用是：遍历原始JSON对象的每个键值对，并将每个键值对中的"值"（.value）替换为当前的"键"（.key），这样生成的新的键值对中，键和值就都是原来的ID了
+
+npx formatjs extract 'src/**/*.{js,jsx,ts,tsx}' | jq 'with_entries(.value = .key)' > lang/zh.json
+
+
+
+# 使用 jq 工具进行转换（需要安装 jq）
+npx formatjs extract 'src/**/*.ts*' | jq 'with_entries(.value = .value.defaultMessage)' > lang/zh.json

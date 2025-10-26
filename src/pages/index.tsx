@@ -23,7 +23,15 @@ const Page = () => {
 
   const lang = getLanguage();
   return (
-    <IntlProvider locale={lang} messages={getLocale(lang)}>
+    <IntlProvider locale={lang} messages={getLocale(lang)} onError={
+      (error) => {
+        console.log('error log:'+ error.message);
+        if (error.code === 'MISSING_TRANSLATION') {
+          return;
+        }
+        throw error;
+      }
+    }>
       <Helmet>
         <title>{title}</title>
       </Helmet>

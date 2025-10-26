@@ -6,10 +6,12 @@ import { getSearchObj } from '@/helpers/location';
  */
 export function getLanguage(): string {
   const query = getSearchObj();
-  const lang =
+  var lang =
     (query.lang as string) ||
     (windowIsDefined() ? navigator?.language : 'zh-CN') ||
     'zh-CN';
+
+  lang = 'zh';
   typeof document !== 'undefined' && document.body.setAttribute('lang', lang);
   return lang;
 }

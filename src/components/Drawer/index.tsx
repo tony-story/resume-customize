@@ -183,7 +183,11 @@ export const Drawer: React.FC<Props> = props => {
           onClick={() => {
             Modal.confirm({
               content: intl.formatMessage({ id: '确认删除' }),
-              onOk: () => deleteItem(key, idx),
+              onOk: () => {
+                deleteItem(key, idx)
+                Modal.destroyAll();
+              },
+              // onOk: () => deleteItem(key, idx),
             });
           }}
         />

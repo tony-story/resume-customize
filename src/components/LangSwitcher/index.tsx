@@ -21,10 +21,17 @@ export const LangSwitcher = ({ className }: { className?: string }) => {
       search: currentSearch,
     } = window.location;
     const hash = currentHash === '#/' ? '' : currentHash;
-    const search = qs.stringify({
-      ...qs.parse(currentSearch),
-      lang: value,
-    });
+    // const search = qs.stringify({
+    //   ...qs.parse(currentSearch),
+    //   lang: value,
+    // });
+
+    const search = qs.stringify (
+      Object.assign(
+        qs.parse(currentSearch),
+        { lang: value }
+      )
+    );
     window.location.href = `${pathname}?${search}${hash}`;
   };
 
