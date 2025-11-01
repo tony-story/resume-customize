@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import {
   Drawer as AntdDrawer,
   Button,
@@ -87,6 +87,8 @@ export const Drawer: React.FC<Props> = props => {
   const [visible, setVisible] = useState(false);
   const [childrenDrawer, setChildrenDrawer] = useState(null);
   const [currentContent, updateCurrentContent] = useState(null);
+  const [deleteConfirmVisible, setDeleteConfirmVisible] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState<{ moduleKey: string; idx: number } | null>(null);
 
   /**
    * 1. 更新currentContent State
@@ -113,12 +115,28 @@ export const Drawer: React.FC<Props> = props => {
     });
   };
 
+  // const deleteItem = (moduleKey: string, idx: number) => {
+  //   const newValues = _.get(props.value, moduleKey, []);
+  //   props.onValueChange({
+  //     [moduleKey]: newValues.slice(0, idx).concat(newValues.slice(idx + 1)),
+  //   });
+  // };
+
+  
+
   const deleteItem = (moduleKey: string, idx: number) => {
     const newValues = _.get(props.value, moduleKey, []);
-    props.onValueChange({
-      [moduleKey]: newValues.slice(0, idx).concat(newValues.slice(idx + 1)),
+    const updatedValues = newValues.slice(0, idx).concat(newValues.slice(idx + 1));
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        props.onValueChange({
+          [moduleKey]: updatedValues,
+        });
+        resolve(true);
+      }, 0);
     });
   };
+
 
   const modules = useMemo(() => {
     const titleNameMap = props.value?.titleNameMap;
@@ -184,8 +202,9 @@ export const Drawer: React.FC<Props> = props => {
             Modal.confirm({
               content: intl.formatMessage({ id: '确认删除' }),
               onOk: () => {
+                
                 deleteItem(key, idx)
-                Modal.destroyAll();
+                // Modal.destroyAll();
               },
               // onOk: () => deleteItem(key, idx),
             });
@@ -268,8 +287,14 @@ export const Drawer: React.FC<Props> = props => {
           config={contentOfModule[childrenDrawer]}
           value={currentContent}
           isList={isList}
+          onSubmit={() => {
+            console.log('onSubmit start ....');
+            setChildrenDrawer(null)
+            updateCurrentContent(null)
+          }}
           onChange={v => {
             if (isList) {
+              console.log('onChange start....')
               const newValue = _.get(props.value, childrenDrawer, []);
               if (currentContent) {
                 newValue[currentContent.dataIndex] = _.merge(
@@ -280,13 +305,13 @@ export const Drawer: React.FC<Props> = props => {
               } else {
                 newValue.push(v);
               }
-              props.onValueChange({
-                [childrenDrawer]: newValue,
-              });
+              // props.onValueChange({
+              //   [childrenDrawer]: newValue,
+              // });
               // 关闭抽屉
-              setChildrenDrawer(null);
-              // 清空当前选中内容
-              updateCurrentContent(null);
+              // setChildrenDrawer(null);
+              // // 清空当前选中内容
+              // updateCurrentContent(null);
             } else {
               updateContent(v);
             }

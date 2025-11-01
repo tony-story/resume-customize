@@ -6,7 +6,7 @@ import qs from 'query-string';
 import jsonUrl from 'json-url';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { getLanguage } from '@/i18n';
-import { useModeSwitcher } from '@/hooks/useModeSwitcher';
+import { getMode, useModeSwitcher } from '@/hooks/useModeSwitcher';
 import { getDefaultTitleNameMap } from '@/data/constant';
 import { getSearchObj } from '@/helpers/location';
 import { customAssign } from '@/helpers/customAssign';
@@ -27,8 +27,20 @@ export const Page: React.FC = () => {
   const lang = getLanguage();
   const intl = useIntl();
   const user = getSearchObj().user || 'visiky';
+  const [mode, setMode] = useState(getMode());
 
-  const [, mode, changeMode] = useModeSwitcher({});
+  // const [, mode, changeMode] = useModeSwitcher({});
+  useEffect(() => {
+    const handleModeChange = (event) => {
+      console.log('mode change: .....')
+      const newMode = event.detail.mode;
+        setMode(newMode);
+    };
+    window.addEventListener('modechange', handleModeChange);
+    return () => {
+      window.removeEventListener('modechange', handleModeChange);
+    }
+  },[]);
 
   const originalConfig = useRef<ResumeConfig>();
   const query = getSearchObj();
@@ -80,7 +92,6 @@ export const Page: React.FC = () => {
   useEffect(() => {
     const user = (query.user || '') as string;
     const branch = (query.branch || 'master') as string;
-    const mode = query.mode;
 
     function store(data) {
       originalConfig.current = data;
@@ -92,40 +103,10 @@ export const Page: React.FC = () => {
       updateLoading(false);
     }
 
-    if (!mode) {
-      const link = `https://github.com/${user}/${user}/tree/${branch}`;
-      fetchResume(lang, branch, user)
-        .then(data => store(data))
-        .catch(() => {
-          console.log('output modal....')
-          Modal.info({
-            // title: <FormattedMessage id="获取简历信息失败" />,
-            title: intl.formatMessage({ id: '获取简历信息失败' }),
-            content: (
-              <div>
-                请检查用户名 {user} 是否正确或者简历信息是否在
-                <a href={link} target="_blank">{`${link}/resume.json`}</a>下
-              </div>
-            ),
-            // okText: <FormattedMessage id="进入在线编辑" />, // intl.formatMessage({ id: '进入在线编辑' }),
-            okText: intl.formatMessage({ id: '进入在线编辑' }),
-            onOk: () => {
-              changeMode('edit');
-            },
-          });
-        });
-    } else {
-      if (query.data) {
-        codec.decompress(query.data).then(data => {
-          store(JSON.parse(data));
-        });
-      } else {
-        console.log('user log:'+ user)
-        getConfig(lang, branch, user).then(data => {
-          store(data);
-        });
-      }
-    }
+    console.log('user log:'+ user)
+    getConfig(lang, branch, user).then(data => {
+      store(data);
+    });
   }, [lang, query.user, query.branch, query.data]);
 
   const onConfigChange = useCallback(

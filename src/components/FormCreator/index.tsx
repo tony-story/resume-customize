@@ -23,6 +23,8 @@ type Props = {
   onChange: (v: any) => void;
   /** 列表型内容 */
   isList: boolean;
+  /** 提交事件 */
+  onSubmit?: () => void;
 };
 
 const FormItemComponentMap = (type: string) => (
@@ -57,6 +59,17 @@ export const FormCreator: React.FC<Props> = props => {
     setFields(datas);
   }, [props.value]);
 
+  // ✅ value 预处理逻辑抽出来复用
+  const normalizeValues = (values: any) => {
+    if ('edu_time' in values && typeof values.edu_time === 'string') {
+      values.edu_time = values.edu_time.split(',');
+    }
+    if ('work_time' in values && typeof values.work_time === 'string') {
+      values.work_time = values.work_time.split(',');
+    }
+    return values;
+  };
+
   const handleChange = (values: any) => {
     if ('edu_time' in values && typeof values.edu_time === 'string') {
       values.edu_time = values.edu_time.split(',');
@@ -76,7 +89,19 @@ export const FormCreator: React.FC<Props> = props => {
         labelCol={{ span: 6 }}
         initialValues={props.value}
         fields={fields}
-        {...formProps}
+        onValuesChange={!props.isList ? (changed, all) => props.onChange(normalizeValues(all)) : undefined}
+        onFinish={(values) => {
+          const normalized = normalizeValues(values);
+
+          // ✅ 提交时将最终值回传父组件
+          props.onChange(normalized);
+
+          // ✅ 通知父组件关闭 Drawer
+          props.onSubmit?.();
+        }}
+        // onValuesChange={!props.isList ? handleChange: undefined}
+        // onFinish={props.isList? ()=> props.onSubmit?.(): undefined}
+        // {...formProps}
       >
         {_.map(props.config, c => {
           return (

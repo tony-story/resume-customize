@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LangSwitcher } from '@/components/LangSwitcher';
 import { getMode, useModeSwitcher } from '@/hooks/useModeSwitcher';
 import { getSearchObj } from '@/helpers/location';
@@ -6,15 +6,22 @@ import { FormattedMessage } from 'react-intl';
 import './header.less';
 
 const Header: React.FC = () => {
-  const mode = getMode();
+
+  const [mode,setMode] = useState(getMode());
   const [ModeSwitcher] = useModeSwitcher({});
 
-  function gotoOnlineVersion() {
-    const query = getSearchObj();
-    if (typeof window !== 'undefined') {
-      window.open(`https://visiky.github.io/resume/?user=${query.user}`);
+  useEffect(() => {
+    const handleModeChange = (event) => {
+      console.log('modeChange 111')
+      const newMode = event.detail.mode;
+      setMode(newMode);
+    };
+
+    window.addEventListener('modechange', handleModeChange);
+    return () => {
+      window.removeEventListener('modechange', handleModeChange);
     }
-  }
+  },[]);
 
   return (
     <header>
@@ -26,9 +33,6 @@ const Header: React.FC = () => {
             <FormattedMessage id="下载 PDF" />
           </span>
         )}
-        <span className={'action-link'} onClick={gotoOnlineVersion}>
-          在线版本
-        </span>
         <LangSwitcher />
       </span>
     </header>

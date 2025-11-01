@@ -35,8 +35,11 @@ export const useModeSwitcher = ({
       qs.parse(currentSearch),
       { mode: value },
     ))
-
-    window.location.href = `${pathname}?${search}${hash}`;
+    
+    // window.location.href = `${pathname}?${search}${hash}`;
+    window.history.pushState({}, '', `${pathname}?${search}${hash}`);
+    window.dispatchEvent(new CustomEvent('modechange', { detail: { mode: value } }));
+    console.log('window location, pathname:'+ pathname + ',hash:'+hash+',search:'+search);
   };
 
   const canPreview = !query.user;
