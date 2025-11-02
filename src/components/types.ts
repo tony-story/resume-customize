@@ -21,6 +21,8 @@ export type ResumeConfig = {
     workPlace?: string;
     /** 职位 */
     positionTitle?: string;
+    /** 是否加密 */
+    encrypted?: boolean;
   };
 
   /** 标题名称映射 */

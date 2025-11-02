@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/resume',
+  pathPrefix: '/',
   flags: {
     DEV_SSR: false,
   },

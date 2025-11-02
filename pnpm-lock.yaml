@@ -11,6 +11,9 @@ importers:
       '@ant-design/icons':
         specifier: ^4.6.2
         version: 4.8.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@mdx-js/util':
+        specifier: ^2.0.0
+        version: 2.0.0
       array-move:
         specifier: ^3.0.1
         version: 3.0.1
@@ -22,7 +25,7 @@ importers:
         version: 3.2.0
       gatsby-plugin-google-gtag:
         specifier: ^4.23.0
-        version: 4.25.0(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        version: 4.25.0(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       json-url:
         specifier: ^3.0.0
         version: 3.1.0
@@ -37,7 +40,7 @@ importers:
         version: 2.19.3(react@17.0.2)
       react-dnd:
         specifier: ^14.0.2
-        version: 14.0.5(@types/hoist-non-react-statics@3.3.7(@types/react@17.0.89))(@types/node@24.9.1)(@types/react@17.0.89)(react@17.0.2)
+        version: 14.0.5(@types/hoist-non-react-statics@3.3.7(@types/react@17.0.89))(@types/node@24.9.2)(@types/react@17.0.89)(react@17.0.2)
       react-dnd-html5-backend:
         specifier: ^14.0.0
         version: 14.1.0
@@ -50,9 +53,15 @@ importers:
       react-intl:
         specifier: ^6.2.10
         version: 6.8.9(react@17.0.2)(typescript@4.9.5)
+      react-router-dom:
+        specifier: 5.3.4
+        version: 5.3.4(react@17.0.2)
       react-svg:
         specifier: ^14.1.6
         version: 14.1.19(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
     devDependencies:
       '@babel/core':
         specifier: ^7.21.0
@@ -84,15 +93,24 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.12
+      '@types/node':
+        specifier: ^24.9.2
+        version: 24.9.2
       '@types/query-string':
         specifier: ^6.3.0
         version: 6.3.0
       '@types/react':
         specifier: ^17.0.3
         version: 17.0.89
+      '@types/react-dom':
+        specifier: 17.0.1
+        version: 17.0.1
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11
+      '@types/react-router-dom':
+        specifier: ^5.3.3
+        version: 5.3.3
       antd:
         specifier: ^4.16.6
         version: 4.24.16(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -104,16 +122,16 @@ importers:
         version: 7.0.3
       gatsby:
         specifier: ^2.32.13
-        version: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+        version: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       gatsby-plugin-antd:
         specifier: ^2.2.0
         version: 2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       gatsby-plugin-less:
         specifier: ^5.2.0
-        version: 5.15.0(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(webpack@4.47.0)
+        version: 5.15.0(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(webpack@4.47.0)
       gatsby-plugin-pnpm:
         specifier: ^1.2.10
-        version: 1.2.10(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
+        version: 1.2.10(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
       gh-pages:
         specifier: ^3.1.0
         version: 3.2.3
@@ -1191,6 +1209,9 @@ packages:
   '@types/hast@2.3.10':
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
 
+  '@types/history@4.7.11':
+    resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
+
   '@types/hoist-non-react-statics@3.3.7':
     resolution: {integrity: sha512-PQTyIulDkIDro8P+IHbKCsw7U2xxBYflVzW/FgWdCAePD9xGSidgA76/GeJ6lBKoblyhf9pBY763gbrN+1dI8g==}
     peerDependencies:
@@ -1248,8 +1269,8 @@ packages:
   '@types/node@14.18.63':
     resolution: {integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==}
 
-  '@types/node@24.9.1':
-    resolution: {integrity: sha512-QoiaXANRkSXK6p0Duvt56W208du4P9Uye9hWLWgGMDTEoKPhuenzNcC4vGUmrNkiOKTlIrBoyNQYNpSwfEZXSg==}
+  '@types/node@24.9.2':
+    resolution: {integrity: sha512-uWN8YqxXxqFMX2RqGOrumsKeti4LlmIMIyV0lgut4jx7KQBcBiW6vkDtIBvHnHIquwNfJhk8v2OtmO8zXWHfPA==}
 
   '@types/node@8.10.66':
     resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}
@@ -1270,8 +1291,17 @@ packages:
   '@types/reach__router@1.3.15':
     resolution: {integrity: sha512-5WEHKGglRjq/Ae3F8UQxg+GYUIhTUEiyBT9GKPoOLU/vPTn8iZrRbdzxqvarOaGludIejJykHLMdOCdhgWqaxA==}
 
+  '@types/react-dom@17.0.1':
+    resolution: {integrity: sha512-yIVyopxQb8IDZ7SOHeTovurFq+fXiPICa+GV3gp0Xedsl+MwQlMLKmvrnEjFbQxjliH5YVAEWFh975eVNmKj7Q==}
+
   '@types/react-helmet@6.1.11':
     resolution: {integrity: sha512-0QcdGLddTERotCXo3VFlUSWO3ztraw8nZ6e3zJSgG7apwV5xt+pJUS8ewPBqT4NYB1optGLprNQzFleIY84u/g==}
+
+  '@types/react-router-dom@5.3.3':
+    resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
+
+  '@types/react-router@5.1.20':
+    resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
   '@types/react@17.0.89':
     resolution: {integrity: sha512-I98SaDCar5lvEYl80ClRIUztH/hyWHR+I2f+5yTVp/MQ205HgYkA2b5mVdry/+nsEIrf8I65KA5V/PASx68MsQ==}
@@ -1807,8 +1837,8 @@ packages:
     resolution: {integrity: sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==}
     engines: {node: '>=0.10.0'}
 
-  baseline-browser-mapping@2.8.20:
-    resolution: {integrity: sha512-JMWsdF+O8Orq3EMukbUN1QfbLK9mX2CkUmQBcW2T0s8OmdAUL5LLM/6wFwSrqXzlXB13yhyK9gTKS1rIizOduQ==}
+  baseline-browser-mapping@2.8.23:
+    resolution: {integrity: sha512-616V5YX4bepJFzNyOfce5Fa8fDJMfoxzOIzDCZwaGL8MKVpFrXqfNUoIpRn9YMI5pXf/VKgzjB4htFMsFKKdiQ==}
     hasBin: true
 
   batch@0.6.1:
@@ -2009,8 +2039,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001751:
-    resolution: {integrity: sha512-A0QJhug0Ly64Ii3eIqHu5X51ebln3k4yTUkY1j8drqpWHVreg/VLijN48cZ1bYPiqOQuqpkIKnzr/Ul8V+p6Cw==}
+  caniuse-lite@1.0.30001753:
+    resolution: {integrity: sha512-Bj5H35MD/ebaOV4iDLqPEtiliTN29qkGtEHCwawWn4cYm+bPJM2NsaP30vtZcnERClMzp52J4+aw2UNbK4o+zw==}
 
   ccount@1.1.0:
     resolution: {integrity: sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==}
@@ -2486,8 +2516,8 @@ packages:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
 
-  dayjs@1.11.18:
-    resolution: {integrity: sha512-zFBQ7WFRvVRhKcWoUh+ZA1g2HVgUbsZm9sbddh8EC5iv93sui8DVVz1Npvz+r6meo9VKfa8NyLWBsQK1VvIKPA==}
+  dayjs@1.11.19:
+    resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -2741,8 +2771,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.240:
-    resolution: {integrity: sha512-OBwbZjWgrCOH+g6uJsA2/7Twpas2OlepS9uvByJjR2datRDuKGYeD+nP8lBBks2qnB7bGJNHDUx7c/YLaT3QMQ==}
+  electron-to-chromium@1.5.244:
+    resolution: {integrity: sha512-OszpBN7xZX4vWMPJwB9illkN/znA8M36GQqQxi6MNy9axWxhOfJyZZJtSLQCpEFLHP2xK33BiWx9aIuIEXVCcw==}
 
   elliptic@6.6.1:
     resolution: {integrity: sha512-RaddvvMatK2LJHqFJ+YA4WysVN5Ita9E35botqIYspQ4TkRAlCicdzKOjlyv/1Za5RyTNn7di//eEV0uTAfe3g==}
@@ -3725,6 +3755,9 @@ packages:
 
   highlight.js@10.7.3:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
+
+  history@4.10.1:
+    resolution: {integrity: sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==}
 
   hmac-drbg@1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
@@ -4907,8 +4940,8 @@ packages:
   minimalistic-crypto-utils@1.0.1:
     resolution: {integrity: sha512-JIYlbt6g8i5jKfJ3xz7rF0LXmv2TkDxBLUkiBeZ7bAx4GnnNMr8xFpGnOxn6GhTEHx3SjRrZEoU+j04prX1ktg==}
 
-  minimatch@10.0.3:
-    resolution: {integrity: sha512-IPZ167aShDZZUMdRk66cyQAW3qr0WzbHkPdMYa8bzZhlHhO3jALbKdxcaak7W9FfT2rZNpQuUu4Od7ILEpXSaw==}
+  minimatch@10.1.1:
+    resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
     engines: {node: 20 || >=22}
 
   minimatch@3.0.3:
@@ -5079,8 +5112,8 @@ packages:
     resolution: {integrity: sha512-jY5dPJzw6NHd/KPSfPKJ+IHoFS81/tJ43r34ZeNMXGzCOM8jwQDCD12HYayKIB6MuznrnqIYy2e891NA2g0ibA==}
     engines: {node: '>=0.10.0'}
 
-  node-releases@2.0.26:
-    resolution: {integrity: sha512-S2M9YimhSjBSvYnlr5/+umAnPHE++ODwt5e2Ij6FoX45HA/s4vHdkDx1eax2pAPeAOqu4s9b7ppahsyEFdVqQA==}
+  node-releases@2.0.27:
+    resolution: {integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==}
 
   noms@0.0.0:
     resolution: {integrity: sha512-lNDU9VJaOPxUmXcLb+HQFeUgQQPtMI24Gt6hgfuMHRJgMRHMF/qZ4HJD3GDru4sSw9IQl2jPjAYnQrdIeLbwow==}
@@ -5444,6 +5477,9 @@ packages:
 
   path-to-regexp@0.1.12:
     resolution: {integrity: sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==}
+
+  path-to-regexp@1.9.0:
+    resolution: {integrity: sha512-xIp7/apCFJuUHdDLWe8O1HIkb0kQrOMb/0u6FXQjemHn/ii5LrIzU6bdECnsiTF/GjZkMEKg1xdiZwNqDYlZ6g==}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -6149,6 +6185,16 @@ packages:
     resolution: {integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==}
     engines: {node: '>=0.10.0'}
 
+  react-router-dom@5.3.4:
+    resolution: {integrity: sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==}
+    peerDependencies:
+      react: '>=15'
+
+  react-router@5.3.4:
+    resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
+    peerDependencies:
+      react: '>=15'
+
   react-side-effect@2.1.2:
     resolution: {integrity: sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==}
     peerDependencies:
@@ -6325,6 +6371,9 @@ packages:
   resolve-from@5.0.0:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
     engines: {node: '>=8'}
+
+  resolve-pathname@3.0.0:
+    resolution: {integrity: sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==}
 
   resolve-url@0.2.1:
     resolution: {integrity: sha512-ZuF55hVUQaaczgOIwqWzkEcEidmlD/xl44x1UZnhOXcYuFN2S6+rcxpG+C1N3So0wvNI3DmJICUFfu2SxhBmvg==}
@@ -7008,6 +7057,12 @@ packages:
   timsort@0.3.0:
     resolution: {integrity: sha512-qsdtZH+vMoCARQtyod4imc2nIJwg9Cc7lPRrw9CzF8ZKR0khdr8+2nX80PBhET3tcyTtJDxAffGh2rXH4tyU8A==}
 
+  tiny-invariant@1.3.3:
+    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
+
+  tiny-warning@1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+
   tinycolor2@1.6.0:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
 
@@ -7404,6 +7459,9 @@ packages:
 
   valid-url@1.0.9:
     resolution: {integrity: sha512-QQDsV8OnSf5Uc30CKSwG9lnhMPe6exHtTXLRYX8uMwKENy640pU+2BgBL0LRbDh/eYRahNCS7aewCx0wf3NYVA==}
+
+  value-equal@1.0.1:
+    resolution: {integrity: sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==}
 
   value-or-promise@1.0.6:
     resolution: {integrity: sha512-9r0wQsWD8z/BxPOvnwbPf05ZvFngXyouE9EKB+5GbYix+BYnAwrIChCUyFIinfbf2FL/U71z+CPpbnmTdxrwBg==}
@@ -8727,7 +8785,7 @@ snapshots:
       tslib: 2.2.0
       value-or-promise: 1.0.6
 
-  '@graphql-tools/url-loader@6.10.1(@types/node@24.9.1)(graphql@14.7.0)':
+  '@graphql-tools/url-loader@6.10.1(@types/node@24.9.2)(graphql@14.7.0)':
     dependencies:
       '@graphql-tools/delegate': 7.1.5(graphql@14.7.0)
       '@graphql-tools/utils': 7.10.0(graphql@14.7.0)
@@ -8743,7 +8801,7 @@ snapshots:
       is-promise: 4.0.0
       isomorphic-ws: 4.0.1(ws@7.4.5)
       lodash: 4.17.21
-      meros: 1.1.4(@types/node@24.9.1)
+      meros: 1.1.4(@types/node@24.9.2)
       subscriptions-transport-ws: 0.9.19(graphql@14.7.0)
       sync-fetch: 0.3.0
       tslib: 2.2.0
@@ -8970,7 +9028,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
       '@types/responselike': 1.0.3
 
   '@types/classnames@2.3.4':
@@ -8987,7 +9045,7 @@ snapshots:
 
   '@types/cors@2.8.19':
     dependencies:
-      '@types/node': 14.18.63
+      '@types/node': 24.9.2
 
   '@types/debug@0.0.30': {}
 
@@ -9008,16 +9066,18 @@ snapshots:
   '@types/glob@5.0.38':
     dependencies:
       '@types/minimatch': 6.0.0
-      '@types/node': 8.10.66
+      '@types/node': 24.9.2
 
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 6.0.0
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
 
   '@types/hast@2.3.10':
     dependencies:
       '@types/unist': 2.0.11
+
+  '@types/history@4.7.11': {}
 
   '@types/hoist-non-react-statics@3.3.7(@types/react@17.0.89)':
     dependencies:
@@ -9028,7 +9088,7 @@ snapshots:
 
   '@types/http-proxy@1.17.17':
     dependencies:
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -9049,7 +9109,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
 
   '@types/lodash-es@4.17.12':
     dependencies:
@@ -9063,22 +9123,22 @@ snapshots:
 
   '@types/minimatch@6.0.0':
     dependencies:
-      minimatch: 10.0.3
+      minimatch: 10.1.1
 
   '@types/mkdirp@0.5.2':
     dependencies:
-      '@types/node': 8.10.66
+      '@types/node': 24.9.2
 
   '@types/ms@2.1.0': {}
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
       form-data: 4.0.4
 
   '@types/node@14.18.63': {}
 
-  '@types/node@24.9.1':
+  '@types/node@24.9.2':
     dependencies:
       undici-types: 7.16.0
 
@@ -9098,8 +9158,23 @@ snapshots:
     dependencies:
       '@types/react': 17.0.89
 
+  '@types/react-dom@17.0.1':
+    dependencies:
+      '@types/react': 17.0.89
+
   '@types/react-helmet@6.1.11':
     dependencies:
+      '@types/react': 17.0.89
+
+  '@types/react-router-dom@5.3.3':
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 17.0.89
+      '@types/react-router': 5.1.20
+
+  '@types/react-router@5.1.20':
+    dependencies:
+      '@types/history': 4.7.11
       '@types/react': 17.0.89
 
   '@types/react@17.0.89':
@@ -9110,12 +9185,12 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
 
   '@types/rimraf@2.0.5':
     dependencies:
       '@types/glob': 5.0.38
-      '@types/node': 8.10.66
+      '@types/node': 24.9.2
 
   '@types/scheduler@0.16.8': {}
 
@@ -9125,7 +9200,7 @@ snapshots:
 
   '@types/websocket@1.0.2':
     dependencies:
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -9599,7 +9674,7 @@ snapshots:
   autoprefixer@9.8.8:
     dependencies:
       browserslist: 4.27.0
-      caniuse-lite: 1.0.30001751
+      caniuse-lite: 1.0.30001753
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -9709,12 +9784,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-remove-graphql-queries@2.16.1(@babel/core@7.28.5)(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
+  babel-plugin-remove-graphql-queries@2.16.1(@babel/core@7.28.5)(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
     dependencies:
       '@babel/core': 7.28.5
       '@babel/runtime': 7.28.4
       '@babel/types': 7.28.5
-      gatsby: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+      gatsby: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       gatsby-core-utils: 2.15.0
 
   babel-plugin-transform-react-remove-prop-types@0.4.24: {}
@@ -9763,7 +9838,7 @@ snapshots:
       mixin-deep: 1.3.2
       pascalcase: 0.1.1
 
-  baseline-browser-mapping@2.8.20: {}
+  baseline-browser-mapping@2.8.23: {}
 
   batch@0.6.1: {}
 
@@ -9933,10 +10008,10 @@ snapshots:
 
   browserslist@4.27.0:
     dependencies:
-      baseline-browser-mapping: 2.8.20
-      caniuse-lite: 1.0.30001751
-      electron-to-chromium: 1.5.240
-      node-releases: 2.0.26
+      baseline-browser-mapping: 2.8.23
+      caniuse-lite: 1.0.30001753
+      electron-to-chromium: 1.5.244
+      node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.27.0)
 
   buffer-from@1.1.2: {}
@@ -10097,11 +10172,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.27.0
-      caniuse-lite: 1.0.30001751
+      caniuse-lite: 1.0.30001753
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001751: {}
+  caniuse-lite@1.0.30001753: {}
 
   ccount@1.1.0: {}
 
@@ -10705,7 +10780,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.28.4
 
-  dayjs@1.11.18: {}
+  dayjs@1.11.19: {}
 
   debug@2.6.9(supports-color@6.1.0):
     dependencies:
@@ -10993,7 +11068,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.240: {}
+  electron-to-chromium@1.5.244: {}
 
   elliptic@6.6.1:
     dependencies:
@@ -11270,11 +11345,11 @@ snapshots:
       eslint: 6.8.0
       lodash: 4.17.21
 
-  eslint-plugin-graphql@4.0.0(@types/node@24.9.1)(graphql@14.7.0)(typescript@4.9.5):
+  eslint-plugin-graphql@4.0.0(@types/node@24.9.2)(graphql@14.7.0)(typescript@4.9.5):
     dependencies:
       '@babel/runtime': 7.28.4
       graphql: 14.7.0
-      graphql-config: 3.4.1(@types/node@24.9.1)(graphql@14.7.0)(typescript@4.9.5)
+      graphql-config: 3.4.1(@types/node@24.9.2)(graphql@14.7.0)(typescript@4.9.5)
       lodash.flatten: 4.4.0
       lodash.without: 4.4.0
     transitivePeerDependencies:
@@ -11979,23 +12054,23 @@ snapshots:
       - react-dom
       - supports-color
 
-  gatsby-plugin-google-gtag@4.25.0(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+  gatsby-plugin-google-gtag@4.25.0(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
     dependencies:
       '@babel/runtime': 7.28.4
-      gatsby: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+      gatsby: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       minimatch: 3.1.2
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
 
-  gatsby-plugin-less@5.15.0(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(webpack@4.47.0):
+  gatsby-plugin-less@5.15.0(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(webpack@4.47.0):
     dependencies:
       '@babel/runtime': 7.28.4
-      gatsby: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+      gatsby: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       less-loader: 6.2.0(webpack@4.47.0)
     transitivePeerDependencies:
       - webpack
 
-  gatsby-plugin-page-creator@2.10.2(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
+  gatsby-plugin-page-creator@2.10.2(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
     dependencies:
       '@babel/runtime': 7.28.4
       '@babel/traverse': 7.28.5
@@ -12003,7 +12078,7 @@ snapshots:
       chokidar: 3.6.0
       fs-exists-cached: 1.0.0
       fs-extra: 10.1.0
-      gatsby: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+      gatsby: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       gatsby-page-utils: 0.9.1
       gatsby-telemetry: 1.10.2
       globby: 11.1.0
@@ -12012,13 +12087,13 @@ snapshots:
       - encoding
       - supports-color
 
-  gatsby-plugin-pnpm@1.2.10(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
+  gatsby-plugin-pnpm@1.2.10(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
     dependencies:
-      gatsby: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+      gatsby: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       lodash.get: 4.4.2
       lodash.uniq: 4.5.0
 
-  gatsby-plugin-typescript@2.12.1(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
+  gatsby-plugin-typescript@2.12.1(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)):
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6(@babel/core@7.28.5)
@@ -12026,16 +12101,16 @@ snapshots:
       '@babel/plugin-proposal-optional-chaining': 7.21.0(@babel/core@7.28.5)
       '@babel/preset-typescript': 7.28.5(@babel/core@7.28.5)
       '@babel/runtime': 7.28.4
-      babel-plugin-remove-graphql-queries: 2.16.1(@babel/core@7.28.5)(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
+      babel-plugin-remove-graphql-queries: 2.16.1(@babel/core@7.28.5)(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
     transitivePeerDependencies:
       - gatsby
       - supports-color
 
-  gatsby-plugin-utils@0.9.0(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(graphql@14.7.0):
+  gatsby-plugin-utils@0.9.0(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(graphql@14.7.0):
     dependencies:
       '@babel/runtime': 7.28.4
       fastq: 1.19.1
-      gatsby: 2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
+      gatsby: 2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5)
       graphql: 14.7.0
       joi: 17.13.3
 
@@ -12133,7 +12208,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5):
+  gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5):
     dependencies:
       '@babel/code-frame': 7.27.1
       '@babel/core': 7.28.5
@@ -12161,7 +12236,7 @@ snapshots:
       babel-plugin-add-module-exports: 1.0.4
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-lodash: 3.3.4
-      babel-plugin-remove-graphql-queries: 2.16.1(@babel/core@7.28.5)(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
+      babel-plugin-remove-graphql-queries: 2.16.1(@babel/core@7.28.5)(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
       babel-preset-gatsby: 0.12.3(@babel/core@7.28.5)(core-js@3.46.0)
       better-opn: 2.1.1
       better-queue: 3.8.12
@@ -12188,7 +12263,7 @@ snapshots:
       eslint-config-react-app: 5.2.1(@typescript-eslint/eslint-plugin@2.34.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@4.9.5))(eslint@6.8.0)(typescript@4.9.5))(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@4.9.5))(babel-eslint@10.1.0(eslint@6.8.0))(eslint-plugin-flowtype@3.13.0(eslint@6.8.0))(eslint-plugin-import@2.32.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@4.9.5))(eslint@6.8.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@6.8.0))(eslint-plugin-react-hooks@1.7.0(eslint@6.8.0))(eslint-plugin-react@7.37.5(eslint@6.8.0))(eslint@6.8.0)(typescript@4.9.5)
       eslint-loader: 2.2.1(eslint@6.8.0)(webpack@4.47.0)
       eslint-plugin-flowtype: 3.13.0(eslint@6.8.0)
-      eslint-plugin-graphql: 4.0.0(@types/node@24.9.1)(graphql@14.7.0)(typescript@4.9.5)
+      eslint-plugin-graphql: 4.0.0(@types/node@24.9.2)(graphql@14.7.0)(typescript@4.9.5)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@4.9.5))(eslint@6.8.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@6.8.0)
       eslint-plugin-react: 7.37.5(eslint@6.8.0)
@@ -12208,9 +12283,9 @@ snapshots:
       gatsby-graphiql-explorer: 0.11.0
       gatsby-legacy-polyfills: 0.7.1
       gatsby-link: 2.11.0(@reach/router@1.3.4(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      gatsby-plugin-page-creator: 2.10.2(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
-      gatsby-plugin-typescript: 2.12.1(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
-      gatsby-plugin-utils: 0.9.0(gatsby@2.32.13(@types/node@24.9.1)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(graphql@14.7.0)
+      gatsby-plugin-page-creator: 2.10.2(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
+      gatsby-plugin-typescript: 2.12.1(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))
+      gatsby-plugin-utils: 0.9.0(gatsby@2.32.13(@types/node@24.9.2)(@types/react@17.0.89)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(sockjs-client@1.6.1)(typescript@4.9.5))(graphql@14.7.0)
       gatsby-react-router-scroll: 3.7.0(@reach/router@1.3.4(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       gatsby-telemetry: 1.10.2
       glob: 7.2.3
@@ -12527,14 +12602,14 @@ snapshots:
       graphql-type-json: 0.2.4(graphql@14.7.0)
       object-path: 0.11.8
 
-  graphql-config@3.4.1(@types/node@24.9.1)(graphql@14.7.0)(typescript@4.9.5):
+  graphql-config@3.4.1(@types/node@24.9.2)(graphql@14.7.0)(typescript@4.9.5):
     dependencies:
       '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2(cosmiconfig@7.0.0)(typescript@4.9.5)
       '@graphql-tools/graphql-file-loader': 6.2.7(graphql@14.7.0)
       '@graphql-tools/json-file-loader': 6.2.6(graphql@14.7.0)
       '@graphql-tools/load': 6.2.8(graphql@14.7.0)
       '@graphql-tools/merge': 6.2.14(graphql@14.7.0)
-      '@graphql-tools/url-loader': 6.10.1(@types/node@24.9.1)(graphql@14.7.0)
+      '@graphql-tools/url-loader': 6.10.1(@types/node@24.9.2)(graphql@14.7.0)
       '@graphql-tools/utils': 7.10.0(graphql@14.7.0)
       cosmiconfig: 7.0.0
       cosmiconfig-toml-loader: 1.0.0
@@ -12675,6 +12750,15 @@ snapshots:
       minimist: 1.2.8
 
   highlight.js@10.7.3: {}
+
+  history@4.10.1:
+    dependencies:
+      '@babel/runtime': 7.28.4
+      loose-envify: 1.4.0
+      resolve-pathname: 3.0.0
+      tiny-invariant: 1.3.3
+      tiny-warning: 1.0.3
+      value-equal: 1.0.1
 
   hmac-drbg@1.0.1:
     dependencies:
@@ -13766,9 +13850,9 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  meros@1.1.4(@types/node@24.9.1):
+  meros@1.1.4(@types/node@24.9.2):
     optionalDependencies:
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
 
   methods@1.1.2: {}
 
@@ -14042,7 +14126,7 @@ snapshots:
 
   minimalistic-crypto-utils@1.0.1: {}
 
-  minimatch@10.0.3:
+  minimatch@10.1.1:
     dependencies:
       '@isaacs/brace-expansion': 5.0.0
 
@@ -14236,7 +14320,7 @@ snapshots:
 
   node-object-hash@2.3.10: {}
 
-  node-releases@2.0.26: {}
+  node-releases@2.0.27: {}
 
   noms@0.0.0:
     dependencies:
@@ -14616,6 +14700,10 @@ snapshots:
       minipass: 7.1.2
 
   path-to-regexp@0.1.12: {}
+
+  path-to-regexp@1.9.0:
+    dependencies:
+      isarray: 0.0.1
 
   path-type@4.0.0: {}
 
@@ -15227,7 +15315,7 @@ snapshots:
       '@babel/runtime': 7.28.4
       classnames: 2.5.1
       date-fns: 2.30.0
-      dayjs: 1.11.18
+      dayjs: 1.11.19
       moment: 2.30.1
       rc-trigger: 5.3.4(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       rc-util: 5.44.4(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -15448,7 +15536,7 @@ snapshots:
     dependencies:
       dnd-core: 14.0.1
 
-  react-dnd@14.0.5(@types/hoist-non-react-statics@3.3.7(@types/react@17.0.89))(@types/node@24.9.1)(@types/react@17.0.89)(react@17.0.2):
+  react-dnd@14.0.5(@types/hoist-non-react-statics@3.3.7(@types/react@17.0.89))(@types/node@24.9.2)(@types/react@17.0.89)(react@17.0.2):
     dependencies:
       '@react-dnd/invariant': 2.0.0
       '@react-dnd/shallowequal': 2.0.0
@@ -15458,7 +15546,7 @@ snapshots:
       react: 17.0.2
     optionalDependencies:
       '@types/hoist-non-react-statics': 3.3.7(@types/react@17.0.89)
-      '@types/node': 24.9.1
+      '@types/node': 24.9.2
       '@types/react': 17.0.89
 
   react-dom@17.0.2(react@17.0.2):
@@ -15518,6 +15606,30 @@ snapshots:
   react-lifecycles-compat@3.0.4: {}
 
   react-refresh@0.8.3: {}
+
+  react-router-dom@5.3.4(react@17.0.2):
+    dependencies:
+      '@babel/runtime': 7.28.4
+      history: 4.10.1
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-router: 5.3.4(react@17.0.2)
+      tiny-invariant: 1.3.3
+      tiny-warning: 1.0.3
+
+  react-router@5.3.4(react@17.0.2):
+    dependencies:
+      '@babel/runtime': 7.28.4
+      history: 4.10.1
+      hoist-non-react-statics: 3.3.2
+      loose-envify: 1.4.0
+      path-to-regexp: 1.9.0
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-is: 16.13.1
+      tiny-invariant: 1.3.3
+      tiny-warning: 1.0.3
 
   react-side-effect@2.1.2(react@17.0.2):
     dependencies:
@@ -15759,6 +15871,8 @@ snapshots:
   resolve-from@4.0.0: {}
 
   resolve-from@5.0.0: {}
+
+  resolve-pathname@3.0.0: {}
 
   resolve-url@0.2.1: {}
 
@@ -16611,6 +16725,10 @@ snapshots:
 
   timsort@0.3.0: {}
 
+  tiny-invariant@1.3.3: {}
+
+  tiny-warning@1.0.3: {}
+
   tinycolor2@1.6.0: {}
 
   tmp@0.0.33:
@@ -17033,6 +17151,8 @@ snapshots:
   v8-compile-cache@2.4.0: {}
 
   valid-url@1.0.9: {}
+
+  value-equal@1.0.1: {}
 
   value-or-promise@1.0.6: {}
 
