@@ -87,8 +87,6 @@ export const Drawer: React.FC<Props> = props => {
   const [visible, setVisible] = useState(false);
   const [childrenDrawer, setChildrenDrawer] = useState(null);
   const [currentContent, updateCurrentContent] = useState(null);
-  const [deleteConfirmVisible, setDeleteConfirmVisible] = useState(false);
-  const [itemToDelete, setItemToDelete] = useState<{ moduleKey: string; idx: number } | null>(null);
 
   /**
    * 1. 更新currentContent State
@@ -124,18 +122,18 @@ export const Drawer: React.FC<Props> = props => {
 
   
 
-  const deleteItem = (moduleKey: string, idx: number) => {
-    const newValues = _.get(props.value, moduleKey, []);
-    const updatedValues = newValues.slice(0, idx).concat(newValues.slice(idx + 1));
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        props.onValueChange({
-          [moduleKey]: updatedValues,
-        });
-        resolve(true);
-      }, 0);
-    });
-  };
+  // const deleteItem = (moduleKey: string, idx: number) => {
+  //   const newValues = _.get(props.value, moduleKey, []);
+  //   const updatedValues = newValues.slice(0, idx).concat(newValues.slice(idx + 1));
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       props.onValueChange({
+  //         [moduleKey]: updatedValues,
+  //       });
+  //       resolve(true);
+  //     }, 0);
+  //   });
+  // };
 
 
   const modules = useMemo(() => {
@@ -202,8 +200,8 @@ export const Drawer: React.FC<Props> = props => {
             Modal.confirm({
               content: intl.formatMessage({ id: '确认删除' }),
               onOk: () => {
-                
-                deleteItem(key, idx)
+                setPendingDelete({key: key, index: idx});
+                // deleteItem(key, idx)
                 // Modal.destroyAll();
               },
               // onOk: () => deleteItem(key, idx),

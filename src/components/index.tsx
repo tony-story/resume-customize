@@ -222,32 +222,10 @@ export const Page: React.FC = () => {
           <Alert
             showIcon={false}
             message={
-              <span>
+              <span style={{display: 'flex', justifyContent: 'center'}}>
                 {intl.formatMessage({
-                  id: `编辑之后，请及时存储个人信息到个人仓库中。`,
+                  id: `欢迎使用简历编辑`,
                 })}
-                <span>
-                  <span style={{ marginRight: '4px' }}>
-                    👉 {!query.user && intl.formatMessage({ id: '参考：' })}
-                  </span>
-                  <span
-                    style={{
-                      color: `var(--primary-color, #1890ff)`,
-                      cursor: 'pointer',
-                    }}
-                    onClick={() => {
-                      const user = query.user || 'visiky';
-                      window.open(`https://github.com/${user}/${user}`);
-                    }}
-                  >
-                    {`${query.user || 'visiky'}'s resumeInfo`}
-                  </span>
-                  <span>
-                    {`（https://github.com/${query.user || 'visiky'}/${
-                      query.user || 'visiky'
-                    }/blob/${query.branch || 'master'}/resume.json）`}
-                  </span>
-                </span>
               </span>
             }
             banner
